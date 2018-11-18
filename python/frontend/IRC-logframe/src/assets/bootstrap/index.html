@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>IRC Logframe</title>
+
+    <!-- Bootstrap core CSS -->
+    
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">-->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="css/simple-sidebar.css" rel="stylesheet">
+
+    <script>
+    	var indicator_index = 1;
+    	function indicator_fields(){
+    		indicator_index++;
+    		var objTo = document.getElementById('indicator_fields');
+    		var divtest = document.createElement('div');
+    		divtest.setAttribute("class", "form-group removeclass"+indicator_index);
+    		var rdiv = 'removeclass'+indicator_index;
+    		divtest.innerHTML = '<div class="form-group row" id="indicator_fields"><div class="input-group"><input type="text" class="form-control" id="indicator" placeholder="Enter Indicator"> <div class="input-group-btn"> <button class="btn btn-danger" type="button"  onclick="remove_indicator_fields('+ indicator_index + ');"> - </button></div></div></div>';
+    		objTo.appendChild(divtest);
+    	}
+
+    	function remove_indicator_fields(rid){
+    		$('.removeclass'+rid).remove();
+    	}
+
+        var result_indicator_index = 1;
+        function result_indicator_fields(){
+            result_indicator_index++;
+            var objTo = document.getElementById('result_indicator_fields');
+            var newDiv = document.createElement('div');
+            newDiv.setAttribute("class", "form-group removeclass"+result_indicator_index);
+            var rdiv = 'removeclass'+result_indicator_index;
+            newDiv.innerHTML = '<div class="form-group row"><div class="input-group"> <input type="text" class="form-control" id="indicator" placeholder="Enter Result Indicator"> <div class="input-group-btn"> <button class="btn btn-danger" type="button"  onclick="remove_result_indicator_fields(' + result_indicator_index + ');"> - </button></div></div></div>';
+            objTo.appendChild(newDiv);
+        }
+
+        function remove_result_indicator_fields(removeIndex){
+            $('.removeclass'+removeIndex).remove();
+        }
+
+        var transfer_modalities_index = 1;
+        function transfer_modalities_fields(){
+            transfer_modalities_index++;
+            var objTo = document.getElementById('transfer_modalities_fields');
+            var tmDiv = document.createElement('div');
+            tmDiv.setAttribute("class", "form-group removeclass"+transfer_modalities_index);
+            var rdiv = 'removeclass'+transfer_modalities_index;
+            tmDiv.innerHTML = '<div class="form-group row"><div class="input-group"> <input type="text" class="form-control" id="indicator" placeholder="Enter Transfer Modalities"> <div class="input-group-btn"> <button class="btn btn-danger" type="button"  onclick="remove_transfer_modalities_fields(' + transfer_modalities_index + ');"> - </button></div></div></div>';
+               
+            objTo.appendChild(tmDiv);
+        }
+
+        function remove_transfer_modalities_fields(removeIndex){
+            $('.removeclass'+removeIndex).remove();
+        }
+
+        var activities_index=1;
+
+        function activity_fields(){
+            activities_index++;
+            var objTo = document.getElementById('activities_fields');
+            var aDiv = document.createElement('div');
+            aDiv.setAttribute("class", "form-group removeclass"+activities_index);
+            var rdiv = 'removeclass'+activities_index;
+            aDiv.innerHTML = '<div class="form-group row"><div class="input-group"> <input type="text" class="form-control" id="indicator" placeholder="Enter Activities"> <div class="input-group-btn"> <button class="btn btn-danger" type="button"  onclick="remove_activity(' + activities_index + ');"> - </button></div></div></div>';
+
+            objTo.appendChild(aDiv);
+        }
+
+        function remove_activity(removeIndex){
+            $('.removeclass'+removeIndex).remove();
+        }
+
+
+    </script>
+</head>
+
+<body>
+    <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog"
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+         
+          <h4 class="modal-title">New Logframe</h4>
+        </div>
+        <div class="modal-body">
+            <label>Name:</label>
+            <input type="text" placeholder="Project Name">
+            <div class="form-group">
+               <label>Select Category:</label>
+               <select class="form-control">
+                <option>--Categories--</option>
+                <option>Health</option>
+                <option>Rescue</option>
+                <option>Education</option>
+            </select>
+            </div>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-success" data-dismiss="modal">Submit</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  
+
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <a href="#">Logframe Menu </a>
+                </li>
+                <li>
+                    <a href="#" id="myBtn">New Logframe</a>
+                </li>
+                <li>
+                    <a href="#">View Logframes</a>
+
+                </li>
+                <li>
+                    <a href="#">Statistics and Reports</a>
+                </li>
+                
+            </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+                <h1>International Rescue Committee Logframe</h1>
+                <div class="container">
+	              <div class="form-group row">	
+		                <label class="col-2">Project Name: </label>
+		                <p class="col-10">Logframe</p>	
+		          </div>	
+				  <div class="row">
+				    <div class="col-sm-6">
+				      <div class="form-group">
+					    <label for="objective">Objective</label>
+					    <textarea class="form-control" id="exampleTextarea" rows="5"></textarea>
+					  </div>
+				    </div>
+				    
+				    <div class="col-sm-6" >
+				      <div class="form-group row">
+				      	 <div><label for="objective">Indicators</label></div>
+					    <div class="input-group">
+					       <input type="text" class="form-control" id="indicator" placeholder="Enter Indicator">  
+					      <div class="input-group-btn">
+					        <button class="btn btn-success" type="button"  onclick="indicator_fields();"> + </button>
+					      </div>
+					    </div>  
+				  	  </div>
+				      <div id="indicator_fields"></div>       
+				    </div>
+				  </div>
+				</div>
+				<hr />
+                <div class="container">
+				  <div class="row">
+				    <div class="col-sm-6">
+				      <div class="form-group">
+					    <label for="exampleTextarea">Outputs 1</label>
+					    <textarea class="form-control" id="exampleTextarea" rows="5"></textarea>
+					  </div>
+					  <label>+ Add Output</label>
+				    </div>
+				    <div class="col-sm-6">
+    				      <div class="form-group row">
+    				      	 <div><label>Result Indicators</label></div>
+                             <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Enter Result Indicator">
+                                <div class="input-group-btn">
+                                    <button class="btn btn-success" type="button" onclick="result_indicator_fields();"> + </button>
+    				  	        </div>
+                            </div>
+                          </div>
+                          <div id="result_indicator_fields"></div>   
+    				      <div class="form-group row">
+    				      	<div><label>Transfer Modalities</label></div>
+                            <div class = "input-group">
+        					    <input type="text" class="form-control" placeholder="Enter Transfer Modalities">   
+                                <div class="input-group-btn">
+                                    <button class="btn btn-success" type="button" onclick="transfer_modalities_fields();"> + </button>
+                                </div>
+                            </div>
+    				  	 </div>
+                         <div id="transfer_modalities_fields"></div>
+    				      <div class="form-group row">
+    				      	<div><label>Activities</label></div>
+                            <div class="input-group">
+    					       <input type="text" class="form-control" placeholder="Activity Details">  
+    					       <button class="btn btn-success" type="button" onclick="activity_fields();">+</button>
+    				  	    </div>
+			             </div>
+                         <div id="activities_fields"></div>
+				    </div>
+				</div>
+            </div>
+
+        </div>
+        <!-- /#page-content-wrapper -->
+
+    <!-- /#wrapper -->
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Menu Toggle Script -->
+    <script>
+         
+        $("#wrapper").toggleClass("toggled");
+          
+        $("#myBtn").click(function(){
+            $("#myModal").modal();
+        });
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,11 @@
+[
+    {
+        "model": "projects.OutcomeArea",
+        "pk": 1,
+        "fields": {
+            "title": "Security",
+            "created_at": "2018-02-07T18:43:22.142991Z",
+            "updated_at": "2018-02-07T18:43:22.143054Z"
+        }
+    }
+]
